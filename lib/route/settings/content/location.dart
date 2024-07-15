@@ -101,6 +101,8 @@ class _SettingsLocationViewState extends State<SettingsLocationView> {
       setState(() {
         isAutoLocatingEnabled = false;
         Global.preference.setBool("auto-location", isAutoLocatingEnabled);
+        city = Global.preference.getString("location-city");
+        town = Global.preference.getString("location-town");
       });
       return;
     } else {
@@ -164,6 +166,10 @@ class _SettingsLocationViewState extends State<SettingsLocationView> {
         }
       },
     );
+    setState(() {
+      city = Global.preference.getString("location-city");
+      town = Global.preference.getString("location-town");
+    });
   }
 
   @override

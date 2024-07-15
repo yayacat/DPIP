@@ -69,6 +69,7 @@ Future<GetLocationResult> getLocation() async {
   return GetLocationResult(positionlast, positionchange);
 }
 
+@pragma('vm:entry-point')
 Future<LocationResult> getLatLngLocation(double latitude, double longitude) async {
   List<Placemark> placemarks = await placemarkFromCoordinates(latitude, longitude);
   LocationResult locationGet = LocationResult('', false);
